@@ -10,26 +10,19 @@ private:
     vector<vector<T>> matrix;
 
 public:
-    // Constructors
     Matrix() {}
     Matrix(vector<vector<T>> m) : matrix(m) {}
 
-    // Method to calculate the determinant of the matrix
     T Determinant() const;
 
-    // Method to calculate the adjoint of the matrix
     Matrix<T> Adjoint() const;
 
-    // Method to calculate the inverse of the matrix
     Matrix<T> Inverse() const;
 
-    // Method to calculate the transpose of the matrix
     Matrix<T> Transpose() const;
 
-    // Method to create a submatrix based on user's choice
     Matrix<T> CreateSubMatrix(size_t row, size_t col) const;
 
-    // Method to display the matrix
     void display() const;
 };
 
@@ -80,7 +73,6 @@ Matrix<T> Matrix<T>::Inverse() const {
 
     Matrix<T> adjointMatrix = Adjoint();
 
-    // Divide each element of adjoint matrix by determinant to get inverse
     size_t size = matrix.size();
     vector<vector<T>> inverse(size, vector<T>(size));
     for (size_t i = 0; i < size; ++i) {

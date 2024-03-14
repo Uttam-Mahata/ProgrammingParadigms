@@ -87,7 +87,6 @@ bool Matrix<T>::TestEqualMatrices(Matrix<T> m)
 
 int main()
 {
-  //Take user input for matrix 1
     vector<vector<int>> m1;
     int r, c;
     cout << "Enter the number of rows and columns for matrix 1: ";
@@ -105,7 +104,6 @@ int main()
         m1.push_back(temp);
     }
     Matrix<int> matrix1(m1);
-    //Take user input for matrix 2
     vector<vector<int>> m2;
     cout << "Enter the number of rows and columns for matrix 2: ";
     cin >> r >> c;
