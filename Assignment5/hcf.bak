@@ -1,0 +1,18 @@
+#lang racket
+(define (hcf n1 n2)
+  (if (= n2 0)
+      n1
+      (hcf n2 (remainder n1 n2))))
+
+(define (compute-hcf n1 n2)
+  (if (< n1 n2)
+      (compute-hcf n2 n1)
+      (hcf n1 n2)))
+
+(display "Enter first number (N1): ")
+(define num1 (read))
+(display "Enter second number (N2): ")
+(define num2 (read))
+(display "HCF of " num1 " and " num2 " is: ")
+(display (compute-hcf num1 num2))
+(newline))

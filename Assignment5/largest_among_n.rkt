@@ -1,0 +1,25 @@
+#lang racket
+(define (largest-number lst)
+  (cond
+    ((null? lst) (error "List is empty."))
+    ((null? (cdr lst)) (car lst))
+    (else (let ((rest-max (largest-number (cdr lst))))
+            (if (> (car lst) rest-max)
+                (car lst)
+                rest-max)))))
+
+(define (main)
+  (display "Enter the number of natural numbers: ")
+  (define n (read))
+  (define numbers '())
+  (do ((i 0 (+ i 1))) ((= i n))
+    (display "Enter number: ")
+    (let ((num (read)))
+      (set! numbers (cons num numbers))))
+  (display "The largest number among ")
+  (display numbers)
+  (display " is ")
+  (display (largest-number numbers))
+  (newline))
+
+(main)

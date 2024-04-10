@@ -1,0 +1,15 @@
+#lang racket
+(define (fib n)
+  (cond ((< n 0) "Input should be a non-negative integer.")
+        ((= n 0) 0)
+        ((= n 1) 1)
+        (else (+ (fib (- n 1))
+                 (fib (- n 2))))))
+
+(display "Enter a natural number: ")
+(define num (read))
+(display "The N-th Fibonacci number of ")
+(display num)
+(display " is ")
+(display (fib num))
+(newline)
